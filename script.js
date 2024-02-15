@@ -21,12 +21,8 @@ twitterBtn.addEventListener("click", () => {
 });
 
 quoteBtn.addEventListener("click", () => {
-    quoteBtn.classList.add("loading");
-    quoteBtn.innerText = "Loading Quote...";
     fetch("http://api.quotable.io/random").then(response => response.json()).then(result => {
         quoteText.innerText = result.content;
         author.innerText = result.author;
-        quoteBtn.classList.remove("loading");
-        quoteBtn.innerText = "New Quote";
     });
 });
